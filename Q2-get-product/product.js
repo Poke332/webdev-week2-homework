@@ -18,7 +18,7 @@ const makeProduct = (product) => {
     `
 }
 
-function showError(message) {
+const showError = (message) => {
     const result = document.querySelector('#result');
     result.innerHTML = `<div class="error-alert">${message}</div>`;
 }
