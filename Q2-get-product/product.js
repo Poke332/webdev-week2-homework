@@ -18,21 +18,37 @@ const makeProduct = (product) => {
     `
 }
 
+function showError(message) {
+    const result = document.querySelector('#result');
+    result.innerHTML = `<div class="error-alert">${message}</div>`;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('form').onsubmit = async function(event){
         event.preventDefault();
         const productId = document.querySelector('#productId').value;
-        //fetch() allows JavaScript to send a request to another server.
         const isEmpty = productId === "";
 
         const response = isEmpty ? 
                             await fetch('https://dummyjson.com/products/?limit=10') : 
                             await fetch(`https://dummyjson.com/products/${productId}`);
-        const data = await response.json(); //when we receive a response, we convert it to a JSON object.
+        const data = await response.json();
+        
+        if (response.status === 429) {
+            showError('Rate limit exceeded. Please wait a moment before trying again.');
+            return;
+        }
+        
+        if (!response.ok) {
+            showError(data.message || 'An error occurred while fetching the product data.');
+            return;
+        }
+        
         console.log(data);
 
         const result = document.querySelector('#result');
         result.innerHTML = "";
+        
         if (isEmpty) {
             data.products.map(product => {
                 result.innerHTML += makeProduct(product);

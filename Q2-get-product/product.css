@@ -168,6 +168,18 @@ input[type="submit"]:focus-visible {
     gap: 24px;
 }
 
+/* ── Error Alert ── */
+.error-alert {
+    grid-column: 1 / -1;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 4px;
+    padding: 16px 20px;
+    color: #DC2626;
+    font-size: 0.9375rem;
+    text-align: center;
+}
+
 /* ── Product Card ── */
 .product {
     background: #FFFFFF;
