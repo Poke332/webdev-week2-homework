@@ -1,0 +1,52 @@
+/* Q4 - Media Queries */
+
+/* ── Back Link ── */
+.return {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+    font-size: 0.875rem;
+    margin-bottom: 16px;
+}
+
+.return:hover {
+    text-decoration: underline;
+}
+
+body {
+    font-family: Georgia, serif;
+    text-align: center;
+    padding: 40px 20px;
+    transition: background-color 300ms ease;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+p {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Large screens: 900px and up */
+@media (min-width: 900px) {
+    body {
+        background-color: lightgreen;
+    }
+}
+
+/* Medium screens: 600px - 899px */
+@media (min-width: 600px) and (max-width: 899px) {
+    body {
+        background-color: lightyellow;
+    }
+}
+
+/* Small screens: 599px and less */
+@media (max-width: 599px) {
+    body {
+        background-color: lightblue;
+    }
+}

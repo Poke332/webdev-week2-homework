@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Product</title>
+        <link rel="stylesheet" href="product.css">
+        <script src="product.js"></script>
+    </head>
+    <body>
+        <a class="return" href="../index.html">Back to Home</a>
+        <header class="store-header">
+            <h1>Product Store</h1>
+            <p>Search by product ID or browse our collection</p>
+        </header>
+
+        <section class="search-section">
+            <form class="search-wrapper">
+                <div class="input-container">
+                    <input type="text" id="productId" placeholder="Enter Product ID">
+                    <span class="tooltip">Leave empty to show first 10 products</span>
+                </div>
+                <input type="submit" value="Search">
+            </form>
+        </section>
+        
+        <main id="result"></main>
+    </body>
+</html>
